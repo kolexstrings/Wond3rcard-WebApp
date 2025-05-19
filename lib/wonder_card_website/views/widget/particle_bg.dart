@@ -39,15 +39,16 @@ class _AnimatedBackgroundState extends State<AnimatedBackground>
     );
 
     _color1Animation = ColorTween(
-      begin: AppColors.primaryShade,
-      end: Colors.deepPurple,
+      begin:   Colors.purple[50],
+      // AppColors.primaryShade,
+      end: Colors.purple[50],
+      // Colors.deepPurple,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
     _color2Animation = ColorTween(
-      begin: Colors.white,
-      end: Colors.deepPurple.shade100,
+      begin: AppColors.primaryShade,
+      end: Colors.deepPurple,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
-
     _controller.repeat(reverse: true);
   }
 
@@ -112,7 +113,7 @@ class ParticlePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = Colors.white.withOpacity(0.3);
+    final paint = Paint()..color = AppColors.primaryShade400.withOpacity(0.3);
     for (var p in particles) {
       final position = Offset(
         p.dx * size.width,

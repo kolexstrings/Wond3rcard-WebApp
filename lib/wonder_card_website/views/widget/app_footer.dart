@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wonder_card_website/utils/wonder_card_colors.dart';
 
 class AppFooter extends StatefulWidget {
   const AppFooter({super.key});
@@ -11,11 +12,9 @@ class _AppFooterState extends State<AppFooter> {
   @override
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final textColor = isDark ? Colors.white : Colors.deepPurple;
-
+    final textColor = Colors.white;
     return Container(
-      color: isDark ? Colors.black : Colors.deepPurple[50],
+      color: AppColors.primaryShade800,
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,10 +27,7 @@ class _AppFooterState extends State<AppFooter> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset(
-                    'images/blue-logo.png',
-                    width: 200,
-                  ),
+                  Image.asset('images/blue-logo.png', width: 200),
                   const SizedBox(height: 8),
                   SizedBox(
                     width: 300,
@@ -90,10 +86,7 @@ class _AppFooterState extends State<AppFooter> {
           const SizedBox(height: 20),
           Text(
             '© ${DateTime.now().year} A&A Surf Networks Ltd. All rights reserved.',
-            style: TextStyle(
-              color: textColor.withOpacity(0.7),
-              fontSize: 14,
-            ),
+            style: TextStyle(color: textColor.withOpacity(0.7), fontSize: 14),
             textAlign: TextAlign.center,
           ),
         ],
@@ -120,10 +113,7 @@ class _AppFooterState extends State<AppFooter> {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Text(
         label,
-        style: TextStyle(
-          fontSize: 14,
-          color: Colors.deepPurple,
-        ),
+        style: TextStyle(fontSize: 14, color: AppColors.primaryShade200),
       ),
     );
   }
@@ -133,10 +123,7 @@ class _AppFooterState extends State<AppFooter> {
       padding: const EdgeInsets.symmetric(vertical: 2),
       child: Text(
         label,
-        style: TextStyle(
-          fontSize: 13,
-          color: Colors.deepPurpleAccent,
-        ),
+        style: TextStyle(fontSize: 13, color: Colors.deepPurpleAccent),
       ),
     );
   }
@@ -145,11 +132,7 @@ class _AppFooterState extends State<AppFooter> {
     return CircleAvatar(
       backgroundColor: Colors.deepPurple,
       radius: 16,
-      child: Icon(
-        icon,
-        color: Colors.white,
-        size: 18,
-      ),
+      child: Icon(icon, color: Colors.white, size: 18),
     );
   }
 }
@@ -177,10 +160,7 @@ class ScrollToTopButton extends StatelessWidget {
             );
           },
           backgroundColor: Colors.deepPurple,
-          child: Icon(
-            Icons.arrow_upward,
-            color: Colors.white,
-          ),
+          child: Icon(Icons.arrow_upward, color: Colors.white),
         ),
       ),
     );
